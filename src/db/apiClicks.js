@@ -42,13 +42,14 @@ export async function getClicksForUrl(url_id) {
 
 const parser = new UAParser();
 
-export const storeClicks = async ({id, originalUrl}) => {
+export const storeClicks = async ({ id, originalUrl }) => {
   try {
     const res = parser.getResult();
     const device = res.type || "desktop"; // Default to desktop if type is not detected
 
+    // Get location data
     const response = await fetch("https://ipapi.co/json");
-    const {city, country_name: country} = await response.json();
+    const { city, country_name: country } = await response.json();
 
     // Record the click
     await supabase.from("clicks").insert({
@@ -58,9 +59,10 @@ export const storeClicks = async ({id, originalUrl}) => {
       device: device,
     });
 
-    // Redirect to the original URL
-    window.location.href = originalUrl;
   } catch (error) {
     console.error("Error recording click:", error);
+  } finally {
+    // Redirect to the original URL regardless of whether click tracking was successful
+    window.location.href = originalUrl;
   }
 };

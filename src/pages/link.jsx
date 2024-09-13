@@ -76,11 +76,11 @@ const LinkPage = () => {
             {url?.title}
           </span>
           <a
-            href={`https://maninblack.in/${link}`}
+            href={`https://scissors-zeta.vercel.app/${link}`}
             target="_blank"
             className="text-3xl sm:text-4xl text-blue-400 font-bold hover:underline cursor-pointer"
           >
-            https://maninblack.in/{link}
+            https://scissors-zeta.vercel.app/{link}
           </a>
           <a
             href={url?.original_url}
@@ -97,7 +97,7 @@ const LinkPage = () => {
             <Button
               variant="ghost"
               onClick={() =>
-                navigator.clipboard.writeText(`https://maninblack.in/${link}`)
+                navigator.clipboard.writeText(`https:/scissors-zeta.vercel.app/${link}`)
               }
             >
               <Copy />
