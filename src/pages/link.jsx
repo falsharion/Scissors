@@ -97,7 +97,7 @@ const LinkPage = () => {
             <Button
               variant="ghost"
               onClick={() =>
-                navigator.clipboard.writeText(`https:/scissors-zeta.vercel.app/${link}`)
+                navigator.clipboard.writeText(`https://scissors-zeta.vercel.app/${link}`)
               }
             >
               <Copy />

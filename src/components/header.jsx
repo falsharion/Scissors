@@ -15,6 +15,8 @@ import { UrlState } from "../context";
   import {logout} from "@/db/apiAuth"
   import useFetch from "../hooks/use-fetch";
 import { BarLoader } from "react-spinners";
+// import scissors from "../assets/scissors.PNG"
+import logo from "../assets/sniplogo.png"
 
 const Header = () => {
   const navigate = useNavigate();
@@ -28,14 +30,14 @@ const Header = () => {
     <nav className="p-4 flex justify-between items-center">
       <Link to="/">
         <img
-          src="https://docrdsfx76ssb.cloudfront.net/static/1725565078/pages/wp-content/uploads/2021/08/bitly_logo.svg"
-          alt="bitly logo"
-          className="h-16"
+          src={logo}
+          alt="scissorslogo"
+          className="h-28"
         />
       </Link>
       <div>
         {!user ? (
-          <Button onClick={() => navigate("/auth")}>Login</Button>
+          <Button variant="outline" onClick={() => navigate("/auth")}>Login</Button>
         ) : (
           <DropdownMenu>
             <DropdownMenuTrigger className="w-10 rounded-full overflow-hidden">
