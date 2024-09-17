@@ -1,6 +1,9 @@
 {
     "rewrites": [
-      { "source": "/:shorturl", "destination": "/api/redirect?url=:shorturl" }
+      {
+        "source": "/:id",
+        "destination": "/index.html"
+      }
     ]
   }
   
