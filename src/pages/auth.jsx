@@ -6,6 +6,7 @@ import {UrlState} from "@/context";
 
 import Login from "../components/login"
 import Signup from "../components/signup"
+import authlogo from "../assets/authlogo.png"
 
 const Auth = () => {
   const [searchParams] = useSearchParams();
@@ -20,13 +21,14 @@ const Auth = () => {
     }
   }, [isAuthenticated, loading])
   return (
-    <div className="mt-20 flex flex-col items-center gap-10">
-      <h1 className="text-5xl font-extrabold">
+    <div className="flex justify-center w-full md:mx-2">
+    <div className="mt-20 flex mx-8 flex-col items-center gap-10">
+      <h1 className="text-3xl md:text-5xl font-extrabold">
         {longLink
           ? "Hold up! Let's login first.."
           : "Login / Signup"}
       </h1>
-      <Tabs defaultValue="Login" className="w-[400px]">
+      <Tabs defaultValue="Login" className="w-[300px] md:w-[500px] mx-8">
         <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="Login">Login</TabsTrigger>
           <TabsTrigger value="Signup">Signup</TabsTrigger>
@@ -36,6 +38,12 @@ const Auth = () => {
         </TabsContent>
         <TabsContent value="Signup"><Signup /></TabsContent>
       </Tabs>
+    </div>
+    <img
+        src={authlogo}
+        alt="authpagelogo"
+        className="hidden w-2/4 my-11 md:px-11 lg:block "
+      />
     </div>
   );
 };

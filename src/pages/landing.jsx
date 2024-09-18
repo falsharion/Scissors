@@ -19,7 +19,7 @@ const LandingPage = () => {
         if (longUrl) navigate(`/auth?createNew=${longUrl}`)
     }
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center mx-8">
       <h2 className="text-orange-600 my-10 sm:my-16 text-3xl sm:text-6xl lg:text-7xl text-white text-center font-extrabold">
         Shorten your <span className="text-amber-400">loooooooooong </span>URLs <br /> like nerver before !
       </h2>
