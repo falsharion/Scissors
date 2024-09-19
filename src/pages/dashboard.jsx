@@ -41,9 +41,9 @@ const Dashboard = () => {
   }, [urls?.length]);
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex mx-4 flex-col gap-8 md:mx-8 ">
       {(loading || loadingClicks) && (
-        <BarLoader width={"100%"} color="#36d7b7" />
+        <BarLoader width={"100%"} color="#ffad03" />
       )}
       <div className="grid grid-cols-2 gap-4">
         <Card>
@@ -51,7 +51,7 @@ const Dashboard = () => {
             <CardTitle>Links Created</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>{urls?.length}</p>
+            <p className="text-amber-400">{urls?.length}</p>
           </CardContent>
         </Card>
         <Card>
@@ -59,7 +59,7 @@ const Dashboard = () => {
             <CardTitle>Total Clicks</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>{clicks?.length}</p>
+            <p className="text-amber-400">{clicks?.length}</p>
           </CardContent>
         </Card>
       </div>

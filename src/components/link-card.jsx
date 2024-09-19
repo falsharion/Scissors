@@ -28,21 +28,21 @@ const LinkCard = ({url = [], fetchUrls}) => {
   const {loading: loadingDelete, fn: fnDelete} = useFetch(deleteUrl, url.id);
 
   return (
-    <div className="flex flex-col md:flex-row gap-5 border p-4 bg-gray-900 rounded-lg">
+    <div className="flex flex-col mx-3 md:flex-row  md:mx-8 gap-5 border p-4 bg-gray-900 rounded-lg">
       <img
         src={url?.qr}
-        className="h-32 object-contain ring ring-blue-500 self-start"
+        className="h-32 object-contain ring ring-amber-400 self-start"
         alt="qr code"
       />
-      <Link to={`/link/${url?.id}`} className="flex flex-col flex-1">
+      <Link to={`/link/${url?.id}`} className="flex flex-col w-full flex-1">
         <span className="text-3xl font-extrabold hover:underline cursor-pointer">
           {url?.title}
         </span>
-        <span className="text-2xl text-blue-400 font-bold hover:underline cursor-pointer">
+        <span className="text-2xl text-amber-400 font-bold hover:underline cursor-pointer">
           https://scissors-zeta.vercel.app{url?.custom_url ? url?.custom_url : url.short_url}
         </span>
-        <span className="flex items-center gap-1 hover:underline cursor-pointer">
-          <LinkIcon className="p-1" />
+        <span className="flex items-center w-80 gap-1 hover:underline cursor-pointer">
+          <LinkIcon className="p-1 w-12" />
           {url?.original_url}
         </span>
         <span className="flex items-end font-extralight text-sm flex-1">
@@ -56,17 +56,17 @@ const LinkCard = ({url = [], fetchUrls}) => {
             navigator.clipboard.writeText(`https://scissors-zeta.vercel.app/${url?.short_url}`)
           }
         >
-          <Copy />
+          <Copy className="text-amber-400 "/>
         </Button>
         <Button variant="ghost" onClick={downloadImage}>
-          <Download />
+          <Download className="text-amber-400 "/>
         </Button>
         <Button
           variant="ghost"
           onClick={() => fnDelete().then(() => fetchUrls())}
           disable={loadingDelete}
           >
-          {loadingDelete ? <BeatLoader size={5} color="white" /> : <Trash />}
+          {loadingDelete ? <BeatLoader size={5} color="#ffad03" /> : <Trash className="text-amber-400 "/>}
         </Button>
       </div>
     </div>

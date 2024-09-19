@@ -68,9 +68,9 @@ const LinkPage = () => {
   return (
     <>
       {(loading || loadingStats) && (
-        <BarLoader className="mb-4" width={"100%"} color="#36d7b7" />
+        <BarLoader className="mb-4" width={"100%"} color="#ffad03" />
       )}
-      <div className="flex flex-col gap-8 sm:flex-row justify-between">
+      <div className="flex flex-col gap-8 sm:flex-row justify-between mx-4 ">
         <div className="flex flex-col items-start gap-8 rounded-lg sm:w-2/5">
           <span className="text-6xl font-extrabold hover:underline cursor-pointer">
             {url?.title}
@@ -78,7 +78,7 @@ const LinkPage = () => {
           <a
             href={`https://scissors-zeta.vercel.app/${link}`}
             target="_blank"
-            className="text-3xl sm:text-4xl text-blue-400 font-bold hover:underline cursor-pointer"
+            className="text-3xl sm:text-4xl text-amber-400 font-bold hover:underline cursor-pointer"
           >
             https://scissors-zeta.vercel.app/{link}
           </a>
@@ -100,10 +100,10 @@ const LinkPage = () => {
                 navigator.clipboard.writeText(`https://scissors-zeta.vercel.app/${link}`)
               }
             >
-              <Copy />
+              <Copy className="text-amber-400" />
             </Button>
             <Button variant="ghost" onClick={downloadImage}>
-              <Download />
+              <Download className="text-amber-400"/>
             </Button>
             <Button
               variant="ghost"
@@ -115,15 +115,16 @@ const LinkPage = () => {
               disable={loadingDelete}
             >
               {loadingDelete ? (
-                <BeatLoader size={5} color="white" />
+                
+                <BeatLoader  size={5} color="white"/>
               ) : (
-                <Trash />
+                <Trash className="text-amber-400" />
               )}
             </Button>
           </div>
           <img
             src={url?.qr}
-            className="w-full self-center sm:self-start ring ring-blue-500 p-1 object-contain"
+            className="w-full self-center sm:self-start ring ring-amber-400 p-1 object-contain"
             alt="qr code"
           />
         </div>

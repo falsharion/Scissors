@@ -3,7 +3,7 @@ import { storeClicks } from '../db/apiClicks'
 import {useParams} from "react-router-dom"
 import { getLongUrl} from '../db/apiUrls'
 import useFetch from "../hooks/use-fetch"
-import { BarLoader } from 'react-spinners'
+import { BarLoader, PacmanLoader } from 'react-spinners'
 
 const RedirectLink = () => {
   const {id} = useParams()
@@ -28,9 +28,14 @@ const RedirectLink = () => {
 if (loading || loadingStats) {
   return (
     <>
-    <BarLoader width={"100%"} color="#36d7b7" />
+    <BarLoader width={"100%"} color="#ffad03" />
     <br />
     Redirecting...
+    <PacmanLoader
+  color="#ffad03"
+  size={91}
+  speedMultiplier={1}
+/>
     
     </>
   )

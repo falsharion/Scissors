@@ -237,7 +237,7 @@ export function CreateLink() {
       }}
     >
       <DialogTrigger asChild>
-        <Button variant="destructive">Create New Link</Button>
+        <Button className="bg-amber-400">Create New Link</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
@@ -274,7 +274,7 @@ export function CreateLink() {
         <DialogFooter className="sm:justify-start">
           <Button
             type="button"
-            variant="destructive"
+            className="bg-amber-400"
             onClick={createNewLink}
             disabled={loading}
           >
